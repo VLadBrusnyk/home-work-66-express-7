@@ -1,0 +1,22 @@
+doctype html
+html(lang="uk")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title User #{user.id}
+    link(rel="icon", href="/favicon.ico")
+    link(rel="stylesheet", href="/styles.css")
+  body
+    main.container
+      header.page-header
+        a.back-link(href="/users") ← До списку
+        h1= user.username
+        p.muted Деталі користувача.
+
+      section.card
+        div.field
+          div.label ID
+          div.value= user.id
+        div.field
+          div.label Email
+          div.value= user.email

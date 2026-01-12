@@ -1,0 +1,19 @@
+doctype html
+html(lang="uk")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Users
+    link(rel="icon", href="/favicon.ico")
+    link(rel="stylesheet", href="/styles.css")
+  body
+    main.container
+      header.page-header
+        h1 Users
+        p.muted Список користувачів.
+
+      ul.card-list
+        each user in users
+          li.card
+            a.card-title(href=`/users/${user.id}`) #{user.username}
+            div.card-meta #{user.email}
