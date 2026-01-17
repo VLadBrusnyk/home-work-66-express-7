@@ -113,7 +113,7 @@ npm run start-local
 | `GET` | `/db/articles`            | Читає статті з MongoDB (колекція `articles`) |
 | `GET` | `/db/articles/:articleId` | Читає одну статтю з MongoDB по `_id`         |
 
-> 🔒 **Захищено:** Обидва маршрути вимагають авторизації (як і `/articles`)
+> 🔒 **Захищено:** Обидва маршрути вимагають авторизації
 
 📎 Усі сторінки використовують стилі `public/styles.css` та фавікон `public/favicon.ico`
 
@@ -135,19 +135,6 @@ npm run start-local
 | `PUT`    | `/api/users/:userId` | Замінити користувача | повний об'єкт         |
 | `PATCH`  | `/api/users/:userId` | Частково оновити     | часткові дані         |
 | `DELETE` | `/api/users/:userId` | Видалити користувача | —                     |
-
-### 📰 Articles API
-
-**Базовий шлях:** `/api/articles`
-
-| Метод    | Маршрут                    | Опис               |
-| -------- | -------------------------- | ------------------ |
-| `GET`    | `/api/articles`            | Список статей      |
-| `GET`    | `/api/articles/:articleId` | Деталі статті      |
-| `POST`   | `/api/articles`            | Створити статтю    |
-| `PUT`    | `/api/articles/:articleId` | Замінити статтю    |
-| `PATCH`  | `/api/articles/:articleId` | Часткове оновлення |
-| `DELETE` | `/api/articles/:articleId` | Видалити статтю    |
 
 ### 🍃 MongoDB Articles API (Atlas CRUD)
 
@@ -194,8 +181,7 @@ Cookie-parser підключений глобально. Маршрути для
 
 ### 🛡 Захищені маршрути
 
-- `GET /protected` — доступний лише залогіненим користувачам
-- `/users`, `/articles`, `/api/users`, `/api/articles` — захищені через `ensureAuthenticated`
+- `/users`, `/articles`, `/db/articles`, `/api/users`, `/api/db/articles` — захищені через `ensureAuthenticated`
 
 ### 🔄 Відновлення пароля
 
@@ -254,8 +240,9 @@ Cookie-parser підключений глобально. Маршрути для
     │   ├── homeRoutes.js
     │   ├── userRoutes.js
     │   ├── articleRoutes.js
+    │   ├── dbArticleRoutes.js
     │   ├── apiUserRoutes.js
-    │   ├── apiArticleRoutes.js
+    │   ├── apiDbArticleRoutes.js
     │   ├── preferencesRoutes.js
     │   └── authRoutes.js
     │
@@ -263,8 +250,6 @@ Cookie-parser підключений глобально. Маршрути для
     │   ├── homeController.js
     │   ├── usersController.js
     │   ├── articlesController.js
-    │   ├── apiUsersController.js
-    │   ├── apiArticlesController.js
     │   └── preferencesController.js
     │
     ├── 📁 middlewares/       # Middleware
@@ -285,8 +270,5 @@ Cookie-parser підключений глобально. Маршрути для
     │   └── mailer.js         # Nodemailer transport
     │
     └── 📁 data/              # In-memory сховища
-        ├── usersStore.js     # Користувачі + хешування
-        └── articlesStore.js  # Статті
+        └── usersStore.js     # Користувачі + хешування
 ```
-
----

@@ -1,6 +1,6 @@
 const express = require('express');
 const ensureAuthenticated = require('../middlewares/ensureAuthenticated');
-const { listDbArticles, getDbArticle } = require('../controllers/dbArticlesController');
+const { listDbArticles, getDbArticle } = require('../controllers/articlesController');
 
 const router = express.Router();
 

@@ -1,3 +1,4 @@
+// TODO: merged into usersController
 const {
     listUsers,
     getUserById,

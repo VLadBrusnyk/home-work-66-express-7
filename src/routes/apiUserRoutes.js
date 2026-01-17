@@ -8,7 +8,7 @@ const {
     apiReplaceUser,
     apiPatchUser,
     apiDeleteUser,
-} = require('../controllers/apiUsersController');
+} = require('../controllers/usersController');
 
 const router = express.Router();
 

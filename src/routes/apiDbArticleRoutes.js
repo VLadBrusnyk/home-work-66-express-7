@@ -9,7 +9,7 @@ const {
     apiUpdateMany,
     apiDeleteOne,
     apiDeleteMany,
-} = require('../controllers/apiDbArticlesController');
+} = require('../controllers/articlesController');
 
 const router = express.Router();
 

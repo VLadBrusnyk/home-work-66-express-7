@@ -15,11 +15,9 @@ const userRoutes = require('./src/routes/userRoutes');
 const articleRoutes = require('./src/routes/articleRoutes');
 const dbArticleRoutes = require('./src/routes/dbArticleRoutes');
 const apiUserRoutes = require('./src/routes/apiUserRoutes');
-const apiArticleRoutes = require('./src/routes/apiArticleRoutes');
 const apiDbArticleRoutes = require('./src/routes/apiDbArticleRoutes');
 const authRoutes = require('./src/routes/authRoutes');
 const preferencesRoutes = require('./src/routes/preferencesRoutes');
-const protectedRoutes = require('./src/routes/protectedRoutes');
 const errorHandler = require('./src/middlewares/errorHandler');
 
 const app = express();
@@ -63,11 +61,9 @@ app.use('/db/articles', dbArticleRoutes);
 app.use('/preferences', preferencesRoutes);
 
 app.use('/api/users', apiUserRoutes);
-app.use('/api/articles', apiArticleRoutes);
 app.use('/api/db/articles', apiDbArticleRoutes);
 app.use('/api/auth', authRoutes);
 
-app.use('/protected', protectedRoutes);
 
 app.use((req, res) => {
     const isApi = req.originalUrl.startsWith('/api');
